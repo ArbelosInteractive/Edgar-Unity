@@ -111,7 +111,17 @@ namespace Edgar.Unity
             else
             {
                 // Initialize GameObject that will hold tilemaps
-                tilemapsRoot = new GameObject(GeneratorConstantsGrid2D.TilemapsRootName);
+
+                //SETH--------------------------------------------------------------------------------------
+                PrefabHolder prefabHolder = level.RootGameObject.GetComponent<PrefabHolder>();
+
+                tilemapsRoot = Object.Instantiate(prefabHolder.TilemapPrefab);
+                tilemapsRoot.name = "Tilemaps";
+                prefabHolder.TilemapInstance = tilemapsRoot;
+
+                //SETH--------------------------------------------------------------------------------------
+
+                //tilemapsRoot = new GameObject(GeneratorConstantsGrid2D.TilemapsRootName);
                 tilemapsRoot.transform.parent = level.RootGameObject.transform;
 
                 if (mode == TilemapLayersStructureModeGrid2D.Default)

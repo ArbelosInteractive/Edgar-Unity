@@ -24,8 +24,16 @@ namespace Edgar.Unity
             var corridorToConnectionMapping = levelDescription.GetCorridorToConnectionMapping();
 
             // Prepare an object to hold instantiated room templates
-            var roomTemplateInstancesRoot = new GameObject(GeneratorConstantsGrid2D.RoomsRootName);
+
+            //SETH--------------------------------------------------------------------------------------
+
+            PrefabHolder prefabHolder = rootGameObject.GetComponent<PrefabHolder>();
+
+            GameObject roomTemplateInstancesRoot = UnityEngine.Object.Instantiate(prefabHolder.RoomsPrefab);
+            prefabHolder.RoomsInstance = roomTemplateInstancesRoot;
             roomTemplateInstancesRoot.transform.parent = rootGameObject.transform;
+
+            //SETH--------------------------------------------------------------------------------------
 
             // Initialize rooms
             var layoutData = new Dictionary<RoomBase, RoomInstanceGrid2D>();
