@@ -115,7 +115,7 @@ namespace Edgar.Unity
                 //SETH--------------------------------------------------------------------------------------
                 PrefabHolder prefabHolder = level.RootGameObject.GetComponent<PrefabHolder>();
 
-                tilemapsRoot = Object.Instantiate(prefabHolder.TilemapPrefab);
+                tilemapsRoot = Object.Instantiate(prefabHolder.TilemapsRootPrefab);
                 tilemapsRoot.name = "Tilemaps";
                 prefabHolder.TilemapInstance = tilemapsRoot;
 
