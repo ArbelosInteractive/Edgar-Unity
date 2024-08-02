@@ -29,5 +29,15 @@ namespace Edgar.Unity
         [ReadOnly] public GameObject Other1TilemapInstance;
         [ReadOnly] public GameObject Other2TilemapInstance;
         [ReadOnly] public GameObject Other3TilemapInstance;
+
+        public GameObject[] GetAllSharedTileMaps()
+        {
+            return  new[] { FloorTilemapInstance,
+                            WallsTilemapInstance,
+                            CollideableTilemapInstance,
+                            Other1TilemapInstance,
+                            Other2TilemapInstance,
+                            Other3TilemapInstance };
+        }
     }
 }
